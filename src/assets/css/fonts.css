@@ -1,0 +1,6 @@
+/* fonts */
+@font-face {
+  font-family: 'GloberxBold';
+  src: url("../fonts/GloberxBold.eot");
+  src: url("../fonts/GloberxBold.eot?#iefix") format("embedded-opentype"), url("../fonts/GloberxBold.woff") format("woff"), url("../fonts/GloberxBold.ttf") format("truetype"), url("../fonts/GloberxBold.svg#GloberxBold") format("svg");
+  font-weight: normal; }

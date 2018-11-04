@@ -1,0 +1,29 @@
+﻿<p-card header="Olá {{currentUser.username}}!" subheader="Bem vindo a lista de empresas"  [style]="{width: '660px'}"  styleClass="ui-card-shadow">
+        <p-header>
+<h1></h1>
+</p-header>
+
+<p-table [value]="empresas" [loading]="loading">
+        <ng-template pTemplate="header">
+            <tr style="text-align: center">
+                <th>CNPJ</th>
+                <th>Nome</th>
+                <th>Data de Fundação</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-empresa>
+                <tr style="text-align: center">
+                <td>{{empresa.cnpj}}</td>
+                <td style="text-transform:uppercase">{{empresa.nome}}</td>
+                <td>{{empresa.dataFundacao}}</td>
+                <td><p-button label="DELETAR" styleClass="ui-button-danger" (click)="deleteCompany(empresa.id)" class="text-danger"></p-button></td>
+            </tr>
+        </ng-template>
+    </p-table>
+
+    <p-footer>
+            <p-button label="Registrar Empresa" icon="fa fa-check" iconPos="left" [routerLink]="['/cadastro-empresa']"></p-button> 
+            <p-button label="Logout" styleClass="ui-button-danger" (click)="logout()" ></p-button>
+</p-footer>
+</p-card>

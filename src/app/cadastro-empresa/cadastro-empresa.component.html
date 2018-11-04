@@ -1,0 +1,31 @@
+
+
+<h2>Registrar Empresa</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="CNPJ">CNPJ</label><span class="text-danger">*</span>
+        <input type="text" formControlName="cnpj" class="form-control t-cnpj" [ngClass]="{ 'is-invalid': submitted && f.cnpj.errors }" />
+        <div *ngIf="submitted && f.cnpj.errors" class="invalid-feedback">
+            <div *ngIf="f.cnpj.errors.required">Este campo é obrigatório!</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="username">Nome</label><span class="text-danger">*</span>
+        <input type="text" formControlName="nome" class="form-control" style="text-transform:uppercase" [ngClass]="{ 'is-invalid': submitted && f.nome.errors }" />
+        <div *ngIf="submitted && f.nome.errors" class="invalid-feedback">
+            <div *ngIf="f.nome.errors.required">Este campo é obrigatório!</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="dataFundacao">Data de Fundação</label><span class="text-danger">*</span>
+        <input type="text" formControlName="dataFundacao" class="form-control t-date" [ngClass]="{ 'is-invalid': submitted && f.dataFundacao.errors }" />
+        <div *ngIf="submitted && f.dataFundacao.errors" class="invalid-feedback">
+            <div *ngIf="f.dataFundacao.errors.required">Este campo é obrigatório!</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Register</button>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        <a [routerLink]="['/home']" class="btn btn-link">Cancel</a>
+    </div>
+</form>
